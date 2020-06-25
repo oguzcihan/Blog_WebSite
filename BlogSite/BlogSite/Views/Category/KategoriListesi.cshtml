@@ -1,0 +1,19 @@
+﻿@model IEnumerable<BlogSite.Models.Category>
+ <!-- category widget -->
+<div class="aside-widget">
+    <div class="section-title">
+        <h2 class="title">Kategoriler</h2>
+    </div>
+    <div class="category-widget">
+        <ul>
+            @foreach (var item in Model)
+            {
+
+                <li><a href="/Blogs/List/@item.Id">@item.KategoriAdi <span></span></a></li>
+            }          
+        </ul>
+    </div>
+
+
+</div>
+<!-- /category widget -->

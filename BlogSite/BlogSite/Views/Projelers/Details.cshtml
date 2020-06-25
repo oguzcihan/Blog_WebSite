@@ -1,0 +1,250 @@
+﻿@model BlogSite.Models.Projeler
+
+@{
+    ViewBag.Title = "Detay";
+    
+
+}
+<!-- PAGE HEADER -->
+<div id="post-header" class="page-header">
+    <div class="page-header-bg" style="background-image: url('/upload/@Model.Resim');" data-stellar-background-ratio="0.5"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <div class="post-category">
+                    <a href="#">Proje</a>
+                </div>
+                <h1>@Html.DisplayFor(model => model.ProjeAdi)</h1>
+                <ul class="post-meta">
+                    <li><a href="#">Oğuz Cihan</a></li>
+                    <li>@Html.DisplayFor(model => model.EklemeTarih)</li>
+                    <li><i class="fa fa-comments"></i> 3</li>
+                    <li><i class="fa fa-eye"></i> 807</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /PAGE HEADER -->
+<!-- section -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8">
+                <!-- post share -->
+                <div class="section-row">
+                    <div class="post-share">
+
+                        <a href="#" class="social-twitter"><i class="fa fa-twitter"></i><span>Tweet</span></a>
+                        <a href="#" class="social-pinterest"><i class="fa fa-pinterest"></i><span>Pin</span></a>
+                        <a href="#"><i class="fa fa-envelope"></i><span>Email</span></a>
+                        <a href="#"><i class="fa fa-linkedin"></i><span>Linkedin</span></a>
+                    </div>
+                </div>
+                <!-- /post share -->
+                <!-- post content -->
+                <div class="section-row">
+
+                    <div class="table-responsive">
+
+                        <table class="table table-bordered">
+
+
+                            <tbody>
+
+                                <tr>
+                                    <td><b>Proje Adı</b></td>
+                                    <td>@Model.ProjeAdi</td>
+                                </tr>
+
+                                <tr>
+                                    <td><b>Proje Dili</b></td>
+                                    <td>@Model.ProjeDili</td>
+                                </tr>
+                                <tr>
+                                    <td><b>Url</b></td>
+                                    <td><a href="@Model.Url" target="_blank">Github</a></td>
+                                </tr>
+
+                                <tr>
+                                    <td><b>Proje Detayları</b></td>
+                                    <td>@Model.Detay</td>
+                                </tr>
+
+                            </tbody>
+
+                        </table>
+                        
+
+                    </div>
+                    <blockquote class="blockquote">
+                        <p>İnanmak başarmanın yarısıdır.</p>
+                        <footer class="blockquote-footer">Oğuz Cihan</footer>
+                    </blockquote>
+
+                </div>
+                <!-- /post content -->
+                <!-- post tags -->
+                <div class="section-row">
+                    <div class="post-tags">
+                        <ul>
+                            <li>TAGS:</li>
+                            <li><a href="#">Social</a></li>
+                            <li><a href="#">Teknoloji</a></li>
+                            <li><a href="#">Yazılım</a></li>
+                            <li><a href="#">C#</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /post tags -->
+                <!-- post nav --
+    <div class="section-row">
+        <div class="post-nav">
+            <div class="prev-post">
+                <a class="post-img" href="blog-post.html"><img src="./img/cplus.jpg" alt=""></a>
+                <h3 class="post-title"><a href="#">Sed ut perspiciatis, unde omnis iste natus error sit</a></h3>
+                <span>Previous post</span>
+            </div>
+
+            <div class="next-post">
+                <a class="post-img" href="blog-post.html"><img src="./img/cplus.jpg" alt=""></a>
+                <h3 class="post-title"><a href="#">Postea senserit id eos, vivendo periculis ei qui</a></h3>
+                <span>Next post</span>
+            </div>
+        </div>
+    </div>
+    <!-- /post nav  -->
+                <!-- post author -->
+                <div class="section-row">
+                    <div class="section-title">
+                        <h3 class="title">By <a href="#">Oğuz Cihan</a></h3>
+                    </div>
+                    <div class="author media">
+                        <div class="media-left">
+                            <a href="/Home/About">
+                                <img class="author-img media-object" src="~/upload/pp.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <p>Daha iyi bir mühendis olmak için kendimi geliştirmeye ve içerik üretmeye devam ediyorum ayrıntılı bilgi için hakkımda sayfamı ziyaret edebilirsiniz.:)</p>
+                            <font size="5">
+                                <ul class="author-social">
+                                    <li><a href="https://www.linkedin.com/in/oguzcihan/"><i class="fa fa-linkedin"></i></a></li>
+
+                                    <li><a href="https://github.com/oguzcihan"><i class="fa fa-github"></i></a></li>
+                                    <li><a href="https://www.instagram.com/oguzcihan/"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </font>
+                        </div>
+                    </div>
+                </div>
+                <!-- /post author -->
+                <!-- post reply -->
+                <div class="section-row">
+                    <div class="section-title">
+                        <h3 class="title">Geri bildirim</h3>
+                    </div>
+                    <form class="post-reply">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <textarea class="input" name="message" placeholder="Mesaj"></textarea>
+
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="input" type="text" name="name" placeholder="Ad">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="input" type="email" name="email" placeholder="Email">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <input class="input" type="text" name="website" placeholder="Website">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <button class="primary-button">Kaydet</button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+                <!-- /post reply -->
+            </div>
+            <div class="col-md-4">
+                <!-- /ad widget -->
+                <!-- social widget -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2 class="title">Sosyal medya</h2>
+                    </div>
+                    <div class="social-widget">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/oguzcihan" class="social-twitter">
+                                    <i class="fa fa-github"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/oguzcihan/" class="social-instagram">
+                                    <i class="fa fa-instagram"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/oguzcihan/" class="social-facebook">
+                                    <i class="fa fa-linkedin"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /social widget -->
+                <!-- category widget -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2 class="title">Kategoriler</h2>
+                    </div>
+                    <div class="category-widget">
+                        <ul>
+                            <li><a href="#">Yazılım <span>451</span></a></li>
+                            <li><a href="#">Projeler <span>230</span></a></li>
+                            <li><a href="/Home/About">Hakkımda <span></span></a></li>
+                            <li><a href="/Home/Contact">iletişim <span></span></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- /category widget -->
+                <!-- newsletter widget --
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2 class="title">Newsletter</h2>
+                    </div>
+                    <div class="newsletter-widget">
+                        <form>
+                            <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+                            <input class="input" placeholder="Enter Your Email">
+                            <button class="primary-button">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+                <!-- /newsletter widget -->
+
+
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->

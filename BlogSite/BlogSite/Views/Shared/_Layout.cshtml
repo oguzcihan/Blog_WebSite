@@ -1,0 +1,71 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <title>Oğuz Cihan&minus;@ViewBag.Title</title>
+
+    <!-- Google font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CMuli:400,700" rel="stylesheet">
+
+    <!-- Bootstrap -->
+    <link type="text/css" rel="stylesheet" href="/oguzcihan/css/bootstrap.min.css" />
+
+    <!-- Font Awesome Icon -->
+    <link rel="stylesheet" href="/oguzcihan/css/font-awesome.min.css">
+
+    <!-- Custom stlylesheet -->
+    <link type="text/css" rel="stylesheet" href="/oguzcihan/css/style.css" />
+
+    <link rel="shortcut icon" href="~/upload/favicon_mjp_icon.ico">
+    <link rel="apple-touch-icon" sizes="144x144" type="image/x-icon" href="/upload/favicon/apple-touch-icon.png">
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header id="header">
+        <!-- NAV -->
+        <div id="nav">
+            <!-- Top Nav -->
+            <div id="nav-top">
+                <div class="container">
+                    <!-- social -->
+                    <ul class="nav-social">
+                        <li><a href="https://www.linkedin.com/in/oguzcihan/" target="_blank"><i class="fa fa-linkedin"></i></a></li>
+                        <li><a href="https://github.com/oguzcihan" target="_blank"><i class="fa fa-github"></i></a></li>
+                        <li><a href="#" target="_blank"><i class="fa fa-youtube"></i></a></li>
+                        <li><a href="https://www.instagram.com/oguzcihan/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                    <!-- /social -->
+                    @Html.Partial("_Navbar")
+                </div>
+            </div>
+        </div>
+        <!-- /NAV -->
+    </header>
+    <!-- /HEADER -->
+   @RenderBody();
+    <!-- /SECTION -->
+   @Html.Partial("_Footer")
+    <!-- jQuery Plugins -->
+    <script src="/oguzcihan/js/jquery.min.js"></script>
+    <script src="/oguzcihan/js/bootstrap.min.js"></script>
+    <script src="/oguzcihan/js/jquery.stellar.min.js"></script>
+    <script src="/oguzcihan/js/main.js"></script>
+
+</body>
+
+</html>

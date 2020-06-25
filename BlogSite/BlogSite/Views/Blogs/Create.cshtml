@@ -1,0 +1,137 @@
+﻿@model BlogSite.Models.Blog
+
+@{
+    ViewBag.Title = "Yeni Blog";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<hr />
+
+
+@using (Html.BeginForm("Create", "Blogs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <b class="control-label col-md-2">Başlık: </b>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.Baslik, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Baslik, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <b class="control-label col-md-2">İçerik: </b>
+            <div class="col-lg-8">
+                @Html.TextAreaFor(model => model.Icerik, new { @class = "form-control", @id = "summernote" })
+                @Html.ValidationMessageFor(model => model.Icerik, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Alt Başlık: </b>
+            <div class="col-md-3">
+                @Html.EditorFor(model => model.altBaslik, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.altBaslik, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="">
+            <b class="control-label col-md-2">Alt İçerik: </b>
+            <div class="col-lg-8">
+                @Html.TextAreaFor(model => model.Sonuc, new { @class = "form-control", @style = "height:200px" })
+                @Html.ValidationMessageFor(model => model.Sonuc, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Anasayfa Sol: </b>
+            <div class="col-md-10">
+                <div class="checkbox" style="padding-left:30px">
+                    @Html.EditorFor(model => model.Anasayfa)
+                    @Html.ValidationMessageFor(model => model.Anasayfa, "", new { @class = "text-danger" })
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Anasayfa Sağ: </b>
+            <div class="col-md-10">
+
+                <div class="checkbox" style="padding-left:30px;">
+                    @Html.EditorFor(model => model.AnasayfaSag, "", new { @class = "" })
+                    @Html.ValidationMessageFor(model => model.AnasayfaSag, "", new { @class = "text-danger" })
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Görünüm:(<i style="color:red">*</i>1191x670)</b>
+            <div class="col-md-3">
+                <input type="file" name="file" id="file" accept=".jpg,.png" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <b class="control-label col-md-2">Kategori: </b>
+            <div class="col-md-3">
+                @Html.DropDownList("CategoryId", null, "Kategori Seçiniz", htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CategoryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <br />
+        <div class="form-group ">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-primary " style="width:200px; height:50px" />
+            </div>
+        </div>
+    </div>
+
+}
+
+<div class="col-md-offset-1 col-md-10">
+    @Html.ActionLink("Back to List", "Index", null, new { @class = "btn btn-default" })
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
+
+<script>
+    $('#summernote').summernote({
+        tabsize: 2,
+        height: 120,
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link', 'picture', 'video']],
+            ['view', ['fullscreen', 'codeview', 'help']]
+        ]
+    });
+</script>
+
+
+
+
+
+

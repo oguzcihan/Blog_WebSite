@@ -1,0 +1,126 @@
+﻿@model IEnumerable<BlogSite.Models.Blog>
+@{
+    ViewBag.Title = "Kategoriler";
+}
+
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <div class="page-header-bg" style="background-image: url('/upload/kategori.jpg');" data-stellar-background-ratio="0.5"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 text-center">
+                <h1 class="text-uppercase">KATEGORİLER</h1>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /PAGE HEADER -->
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8">
+
+                <div class="row">
+                    <div class="col-md-12">
+
+                        <div class="section-title">
+                            <h2 class="title">Ayrıntılı Kategori</h2>
+                        </div>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+
+                        <!-- post -->
+                        <div class="col-md-6">
+                            <div class="post">
+                                <a class="post-img" href="/Blogs/Details/?id=@item.Id"><img src="~/upload/@item.Resim" alt=""></a>
+                                <div class="post-body">
+                                    <div class="post-category">
+                                        <a>@item.Category.KategoriAdi</a>
+                                    </div>
+                                    <h3 class="post-title"><a href="/Blogs/Details/?id=@item.Id">@item.Baslik</a></h3>
+                                    <ul class="post-meta">
+                                        <li><a href="#">Oğuz Cihan</a></li>
+                                        <li>@item.EklemeTarih</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /post -->
+
+
+                    }
+
+
+                </div>
+
+                
+            </div>
+
+            <div class="col-md-4">
+                <!-- post widget -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2 class="title">Son Yazılar</h2>
+                    </div>
+                    @foreach (var item in Model)
+                    {
+                        <!-- post -->
+                        <div class="post post-widget">
+                            <a class="post-img" href="/Blogs/Details/?id=@item.Id"><img src="~/upload/@item.Resim" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-category">
+                                    <a>@item.Category.KategoriAdi</a>
+                                </div>
+                                <h3 class="post-title"><a href="/Blogs/Details/?id=@item.Id">@item.Baslik</a></h3>
+                            </div>
+                        </div>
+                        <!-- /post -->
+                    }
+
+                </div>
+                <!-- /post widget -->
+                <!-- social widget -->
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2 class="title">Sosyal medya</h2>
+                    </div>
+                    <div class="social-widget">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/oguzcihan" class="social-twitter">
+                                    <i class="fa fa-github"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/oguzcihan/" class="social-instagram">
+                                    <i class="fa fa-instagram"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/oguzcihan/" class="social-facebook">
+                                    <i class="fa fa-linkedin"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- /social widget -->
+                @{ Html.RenderAction("KategoriListesi", "Category");}
+
+
+
+            </div>
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->

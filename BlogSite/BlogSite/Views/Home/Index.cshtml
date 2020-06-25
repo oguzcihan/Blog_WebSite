@@ -1,0 +1,67 @@
+﻿@model IEnumerable<BlogSite.Models.Blog>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container">
+
+    <p style="padding-top:20px">
+
+        <a href="/Blogs/Create" class="btn btn-primary">Yeni Blog</a>
+
+    </p>
+    <hr />
+    <div class="alert alert-success" role="alert">
+        <strong> @ViewBag.sayi</strong> adet blog listelendi.
+    </div>
+    @if (TempData["Blog"] != null)
+    {
+        var blog = (BlogSite.Models.Blog)TempData["Blog"];
+        <div class="alert alert-success" role="alert">
+            <b>Kayıt Başarılı</b>
+        </div>
+    }
+    <table class="table">
+        <tr>
+
+            <th>
+                <b>Başlık</b>
+            </th>
+
+            <th>
+                <b>Resim Başlığı</b>
+            </th>
+
+
+
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Baslik)
+                </td>
+
+                <td>
+
+
+                    @item.Resim
+
+
+                </td>
+
+
+                <td>
+                    @Html.ActionLink("Düzenle", "Edit", "Blogs", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" })
+                    @Html.ActionLink("Sil", "Delete", "Blogs", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

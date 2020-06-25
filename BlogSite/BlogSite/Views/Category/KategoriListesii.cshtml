@@ -1,0 +1,16 @@
+﻿@model IEnumerable<BlogSite.Models.Category>
+<li class="has-dropdown">
+    <a>Yazılım</a>
+    <div class="dropdown">
+        <div class="dropdown-body">
+            <ul class="dropdown-list">
+                @foreach (var item in Model)
+                {
+
+                    <li><a href="/Blogs/Liste/@item.Id">@item.KategoriAdi</a></li>
+                }
+
+            </ul>
+        </div>
+    </div>
+</li>

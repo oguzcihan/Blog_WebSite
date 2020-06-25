@@ -1,0 +1,59 @@
+﻿@model IEnumerable<BlogSite.Models.Projeler>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<p>
+    @Html.ActionLink("Yeni Proje", "Create", null, new { @class = "btn btn-primary" })
+</p>
+<br />
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ProjeDili)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.EklemeTarih)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Detay)
+        </th>
+      
+        <th>
+            @Html.DisplayNameFor(model => model.Resim)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ProjeDili)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.EklemeTarih)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Detay)
+        </td>
+    
+        <td>
+            @Html.DisplayFor(modelItem => item.Resim)
+        </td>
+        <td>
+            @Html.ActionLink("Düzenle", "Edit", "Projelers", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" })
+            @Html.ActionLink("Sil", "Delete", "Projelers", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+        </td>
+    </tr>
+}
+
+</table>

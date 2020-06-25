@@ -1,0 +1,47 @@
+﻿<!-- logo -->
+<div class="nav-logo">
+    <a href="/Blogs/Index" class="logo"><img src="/oguzcihan/img/logo.png" alt=""></a>
+</div>
+<!-- /logo -->
+@Html.Partial("Search")
+                </div>
+            </div>
+<!-- /Top Nav -->
+<!-- Main Nav -->
+<div id="nav-bottom">
+    <div class="container">
+        <!-- nav -->
+        <ul class="nav-menu">
+            <li>@Html.ActionLink("Anasayfa", "Index", "Blogs")</li>
+           
+            <li>@Html.ActionLink("Projelerim", "Projeler", "Home")</li>
+            @{ Html.RenderAction("KategoriListesii", "Category");}
+
+            <li>@Html.ActionLink("Hakkımda", "About", "Home")</li>
+            <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+        </ul>
+        <!-- /nav -->
+    </div>
+</div>
+<!-- /Main Nav -->
+<!-- Aside Nav -->
+<div id="nav-aside">
+    <ul class="nav-aside-menu">
+        <li>@Html.ActionLink("Anasayfa", "Index", "Blogs")</li>
+        
+        <li>@Html.ActionLink("Projelerim", "Projeler", "Home")</li>
+        <li>@Html.ActionLink("Hakkımda", "About", "Home")</li>
+        <li>@Html.ActionLink("İletişim", "Contact", "Home")</li>
+        <font size="5">
+            <ul class="nav-social">
+                <li><a href="https://www.linkedin.com/in/oguzcihan/" target="_blank"><i class="fa fa-linkedin" title="Linkedin"></i></a></li>
+                <li><a href="https://github.com/oguzcihan" target="_blank"><i class="fa fa-github" title="Github"></i></a></li>
+                <li><a href="#"><i class="fa fa-youtube" title="Youtube"></i></a></li>
+                <li><a href="https://www.instagram.com/oguzcihan/" target="_blank"><i class="fa fa-instagram" title="İnstagram"></i></a></li>
+            </ul>
+        </font>
+
+    </ul>
+    <button class="nav-close nav-aside-close"><span></span></button>
+</div>
+<!-- /Aside Nav -->

@@ -1,0 +1,88 @@
+﻿
+<div class="col-xl-3">
+    <!-- MENU SIDEBAR-->
+    <aside class="menu-sidebar3 js-spe-sidebar">
+        <nav class="navbar-sidebar2 navbar-sidebar3">
+            <ul class="list-unstyled navbar__list">
+                <li class="active has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-tachometer-alt"></i>Yönetim
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            <a href="/Home/_admin">Yönetim Anasayfa</a>
+                        </li>
+                        <li>
+                            <a href="#">Opsiyonel</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>Blog İşlemleri
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>
+                            
+                            @Html.ActionLink("Yeni Ekle", "Create", "Blogs")
+                        </li>
+                        <li>
+                            @Html.ActionLink("Listele", "Index", "Home")
+                        </li>
+
+
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>Proje İşlemleri
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>@Html.ActionLink("Yeni Ekle", "Create", "Projelers")</li>
+                        <li>@Html.ActionLink("Listele", "Index", "Projelers")</li>
+
+
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a class="js-arrow" href="#">
+                        <i class="fas fa-desktop"></i>Kategori İşlemleri
+                        <span class="arrow">
+                            <i class="fas fa-angle-down"></i>
+                        </span>
+                    </a>
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">
+                        <li>@Html.ActionLink("Yeni Ekle", "Create", "Category")</li>
+                        <li>@Html.ActionLink("Listele", "Index", "Category")</li>
+
+
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-chart-bar"></i>İstatistik
+                    </a>
+
+                </li>
+                <li>
+                    <a href="#">
+                        <i class="fas fa-shopping-basket"></i>opsiyonel
+                    </a>
+                </li>
+
+
+
+            </ul>
+        </nav>
+    </aside>
+    <!-- END MENU SIDEBAR-->
+</div>

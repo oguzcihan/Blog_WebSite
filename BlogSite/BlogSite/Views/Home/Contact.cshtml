@@ -1,0 +1,100 @@
+﻿@model BlogSite.Models.Gmail
+@{
+    ViewBag.Title = "İletişim";
+}
+<!-- PAGE HEADER -->
+<div class="page-header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-offset-1 col-md-10 text-center">
+                <h1 class="text-uppercase">İletişim</h1>
+                <p class="lead">İletişim formunu doldurarak mesajınızı iletebilirsiniz. Teşekkürler.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /PAGE HEADER -->
+<!-- SECTION -->
+<div class="section" >
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8">
+                <div class="section-row">
+                    <div class="section-title">
+                        <h2 class="title">İletişim Bilgileri</h2>
+                    </div>
+                    <p>
+
+
+                    </p>
+                    <ul class="contact">
+
+                        <li><i class="fa fa-envelope"></i> <a href="#">info@oguzcihan.com</a></li>
+                        <li><i class="fa fa-map-marker"></i> -</li>
+                    </ul>
+                </div>
+
+                <div class="section-row">
+                    <div class="section-title">
+                        <h2 class="title">Mail Gönder</h2>
+                    </div>
+
+                    @using (Html.BeginForm("Contact", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        @Html.AntiForgeryToken()
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                    <!--<input type="text" class="form-control" id="adsoyad" name="adsoyad" placeholder="Ad Soyad" />-->
+                                    @Html.TextBoxFor(model => model.adsoyad, new { @class = "form-control", @placeholder = "Ad Soyad" })
+                                    @Html.ValidationMessageFor(model => model.adsoyad, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+
+                                    @Html.TextBoxFor(model => model.konu, new { @class = "form-control", @placeholder = "Başlık" })
+                                    @Html.ValidationMessageFor(model => model.konu, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                    @Html.TextBoxFor(model => model.email, new { @class = "form-control", @placeholder = "Email Adresi" })
+                                    @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <span class="input-group-addon"><i class="fa fa-pencil"></i></span>
+                                    @Html.TextAreaFor(model => model.mesaj, new { @class = "form-control", @placeholder = "Mesaj" })
+                                    @Html.ValidationMessageFor(model => model.mesaj, "", new { @class = "text-danger" })
+                                </div>
+
+                                <button class="primary-button fa fa-send" style="height:50px"> Gönder</button>
+                                <br />
+                                <br />
+                                @if (TempData["result"] != null)
+                                {
+                                    <div class="alert alert-success" role="alert">
+                                        @TempData["result"]
+                                    </div>
+                                }
+
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->

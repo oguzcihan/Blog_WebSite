@@ -1,0 +1,176 @@
+﻿@model IEnumerable<BlogSite.Models.Projeler>
+
+@{
+    ViewBag.Title = "Projeler";
+}
+
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div id="hot-post" class="row hot-post">
+           
+            <div class="col-md-8 hot-post-left">
+
+                @foreach (var item in Model)
+                {
+                    if (item.ProjelerSag == true)
+                    {
+
+                        <!-- post -->
+                        <div class="post post-thumb">
+                            <a class="post-img" href="/Projelers/Details/?id=@item.Id"><img src="~/upload/@item.Resim" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-category">
+                                    <a>Proje</a>
+                                </div>
+                                <h3 class="post-title title-lg"><a href="/Projelers/Details/?id=@item.Id">@item.ProjeAdi</a></h3>
+                                <ul class="post-meta">
+                                    <li><a href="/Home/About">Oğuz Cihan</a></li>
+                                    <li>@item.EklemeTarih</li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                }
+                <!-- /post -->
+            </div>
+            <div class="col-md-4 hot-post-right">
+                @foreach (var item in Model)
+                {
+                    if (item.ProjelerSol == true)
+                    {
+                        <!-- post -->
+                        <div class="post post-thumb">
+                            <a class="post-img" href="/Projelers/Details/?id=@item.Id"><img src="~/upload/@item.Resim" alt=""></a>
+                            <div class="post-body">
+                                <div class="post-category">
+                                    <a href="/Projelers/Details/?id=@item.Id">Proje</a>
+
+                                </div>
+                                <h3 class="post-title"><a href="/Projelers/Details/?id=@item.Id">@item.ProjeAdi</a></h3>
+                                <ul class="post-meta">
+                                    <li><a href="/Home/About">Oğuz Cihan</a></li>
+                                    <li>@item.EklemeTarih</li>
+                                </ul>
+                            </div>
+                        </div>
+                    }
+                    <!-- /post -->
+                }
+
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->
+<!-- SECTION -->
+<div class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-8">
+                <!-- row -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="section-title">
+                            <h2 class="title">Tüm Projeler</h2>
+                        </div>
+                    </div>
+                    <!-- post -->
+
+                    @foreach (var item in Model)
+                    {
+
+
+                        <div class="col-md-6">
+                            <div class="post">
+                                <a class="post-img" href=""><img src="~/upload/@item.Resim" alt=""></a>
+
+                                <div class="post-body">
+                                    <div class="post-category">
+                                        <a href="#">Proje</a>
+                                    </div>
+                                    <h3 class="post-title"><a href="/Projelers/Details/?id=@item.Id">@item.ProjeAdi</a></h3>
+                                    @Html.ActionLink("Devamını Gör", "Details", "Projelers", new { id = @item.Id }, new { @class = "button button-style button-anim fa fa-long-arrow-right" })
+                                    <ul class="post-meta">
+                                        <li><a href="#">Oğuz Cihan</a></li>
+                                        <li>@item.EklemeTarih</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                    <!-- /post -->
+
+
+                    <div class="clearfix visible-md visible-lg"></div>
+
+
+
+
+                </div>
+                <!-- /row -->
+            </div>
+            <div class="col-md-4">
+                <div class="aside-widget">
+                    <div class="section-title">
+                        <h2 class="title">Sosyal medya</h2>
+                    </div>
+                    <div class="social-widget">
+                        <ul>
+                            <li>
+                                <a href="https://github.com/oguzcihan" class="social-twitter" target="_blank">
+                                    <i class="fa fa-github"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.instagram.com/oguzcihan/" class="social-instagram" target="_blank">
+                                    <i class="fa fa-instagram"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/oguzcihan/" class="social-facebook" target="_blank">
+                                    <i class="fa fa-linkedin"></i>
+                                    <span>Takip<br>Et</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- ad widget--
+    <div class="aside-widget text-center">
+        <a href="#" style="display: inline-block;margin: auto;">
+            <img class="img-responsive" src="~/upload/" alt="">
+        </a>
+    </div>
+    <!-- /ad widget -->
+                <!-- newsletter widget -->
+                <!--<div class="aside-widget">
+         <div class="section-title">
+             <h2 class="title">Newsletter</h2>
+         </div>
+         <div class="newsletter-widget">
+             <form>
+                 <p>Nec feugiat nisl pretium fusce id velit ut tortor pretium.</p>
+                 <input class="input" name="newsletter" placeholder="Enter Your Email">
+                 <button class="primary-button">Subscribe</button>
+             </form>
+         </div>
+     </div>
+     <!-- /newsletter widget -->
+
+
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /SECTION -->
