@@ -1,1 +1,1 @@
-Kişisel Blog Web Sitesidir.
+Asp.Net MVC ile yapılan kişisel Blog Web sitesidir.
